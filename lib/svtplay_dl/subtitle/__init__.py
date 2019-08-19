@@ -8,9 +8,7 @@ from svtplay_dl.utils.text import decode_html_entities
 from svtplay_dl.utils.http import HTTP, get_full_url
 from svtplay_dl.utils.output import output
 
-
 from requests import __build__ as requests_version
-import platform
 
 
 class subtitle(object):
@@ -73,10 +71,7 @@ class subtitle(object):
         self.save_file(data, "srt")
 
     def save_file(self, data, subtype):
-        if platform.system() == "Windows":
-            file_d = output(self.output, self.config, subtype, mode="wt", encoding="utf-8")
-        else:
-            file_d = output(self.output, self.config, subtype, mode="wt")
+        file_d = output(self.output, self.config, subtype, mode="w", encoding="utf-8")
         if hasattr(file_d, "read") is False:
             return
         file_d.write(data)
