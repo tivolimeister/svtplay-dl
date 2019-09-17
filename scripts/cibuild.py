@@ -117,10 +117,11 @@ def pypi_upload():
 logger.info("Branch: {}".format(branch()))
 logger.info("Tag: {}".format(tag()))
 
-if not tag() and branch() != "master":
-    sys.exit(0)
+# if not tag() and branch() != "master":
+#    sys.exit(0)
 
 build_package()
+sys.exit(0)
 if travis:
     build_docker()
 aws_upload()
