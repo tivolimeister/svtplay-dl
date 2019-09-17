@@ -107,7 +107,7 @@ def aws_upload():
 
 def pypi_upload():
     logger.info("Uploading to pypi")
-    sdist = glob.glob(os.path.join("dist/", "svtplay_dl-*.tar.gz"))
+    sdist = glob.glob(os.path.join("dist/", "svtplay-dl-*.tar.gz"))
     if sdist:
         subprocess.check_call(["twine", "upload", sdist[0]])
     else:
@@ -121,7 +121,7 @@ logger.info("Tag: {}".format(tag()))
 #    sys.exit(0)
 
 build_package()
-print(glob.glob("dist/svtplay_dl-*.tar.gz"))
+print(glob.glob("dist/svtplay-dl-*.tar.gz"))
 print("--")
 print(glob.glob("dist/*"))
 sys.exit(0)
