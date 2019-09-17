@@ -121,7 +121,7 @@ logger.info("Tag: {}".format(tag()))
 #    sys.exit(0)
 
 build_package()
-print(glob.glob(os.path.join("dist/", "svtplay_dl-*.tar.gz")))
+print(glob.glob("dist/svtplay_dl-*.tar.gz"))
 print("--")
 print(glob.glob("dist/*"))
 sys.exit(0)
