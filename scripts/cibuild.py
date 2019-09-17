@@ -122,6 +122,8 @@ logger.info("Tag: {}".format(tag()))
 
 build_package()
 print(glob.glob(os.path.join("dist/", "svtplay_dl-*.tar.gz")))
+print("--")
+print(glob.glob("dist/*"))
 sys.exit(0)
 if travis:
     build_docker()
