@@ -70,7 +70,7 @@ def build_package():
     logger.info("Building python package")
 
     output = subprocess.check_output(["python", "setup.py", "sdist", "bdist_wheel"])
-    print(output)
+    print(output.decode())
 
 
 def snapshot_folder():
@@ -121,6 +121,7 @@ logger.info("Tag: {}".format(tag()))
 #    sys.exit(0)
 
 build_package()
+print(glob.glob(os.path.join("dist/", "svtplay_dl-*.tar.gz")))
 sys.exit(0)
 if travis:
     build_docker()
