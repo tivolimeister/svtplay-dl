@@ -69,7 +69,8 @@ def build_docker():
 def build_package():
     logger.info("Building python package")
 
-    subprocess.check_output(["python", "setup.py", "sdist", "bdist_wheel"])
+    output = subprocess.check_output(["python", "setup.py", "sdist", "bdist_wheel"])
+    print(output)
 
 
 def snapshot_folder():
