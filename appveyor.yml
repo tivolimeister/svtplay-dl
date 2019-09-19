@@ -27,6 +27,7 @@ install:
 
 test_script:
   - "pip install -e ."
+  - "pytest -v --cov"
 
 
 after_test:
